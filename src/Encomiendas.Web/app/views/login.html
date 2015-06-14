@@ -1,0 +1,41 @@
+﻿<section>
+    
+    <form class="login-form" ng-submit="login()">
+        <h4>Log In</h4>
+    
+        <div class="inputStyle" id="input">
+            Email Address<br/>
+            <input type="email" ng-model="user.email" required/><br/>
+        </div>
+        <div class="inputStyle" id ="Div1">
+            Password<br/> 
+            <input type="password" ng-model="user.password" required/><br />
+        </div>
+        <p><input type="checkbox" ng-model="rememberMe">Remember Me</p>
+        
+        <div id="submit">
+            <button type="submit" class ="btn">Log In</button>
+            &nbsp;<a href="/#/register">Register</a>
+        </div>
+        
+        <div>
+            <a id="forgot-password" href="/#/forgot-password">Forgot Password</a>
+        </div>
+
+
+        <div ng-show="error" class="alert alert-dismissable alert-danger" style="margin-top: 20px;">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>Invalid Login</strong>
+            {{error}}
+        </div>
+        
+        
+
+    </form>
+    <div>
+        <button ng-click="loginFacebook()" class="btn btn-info"> Login using Facebook </button>
+        <button ng-click="loginGoogle()" class="btn btn-danger"> Login using Google+</button>
+    </div>
+
+
+</section>

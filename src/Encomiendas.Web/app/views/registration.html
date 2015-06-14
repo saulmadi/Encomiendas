@@ -1,0 +1,67 @@
+﻿<section>
+    
+    <form role="form" ng-hide="registered" class="form-horizontal" ng-submit="register()">
+                
+        <fieldset>
+            <legend>Register a New User Account</legend>
+      
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">Name</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" ng-model="user.name" id="name" required placeholder="John Doe"/><br/>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label for="name" class="col-lg-2 control-label">Phone Number</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" ng-model="user.phoneNumber" id="phoneNumber" required placeholder="(615) 555-1212"/><br/>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label for="email" class="col-lg-2 control-label">Email address</label>
+                <div class="col-lg-10">
+                    <input type="email" class="form-control" ng-model="user.email" id="email" required placeholder="johnd@gmail.com"/><br/>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label for="password1" class="col-lg-2 control-label">Password</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" ng-model="user.password" id="password1" required maxlength="30"/><br />
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="password2" class="col-lg-2 control-label">Confirm Password</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control" ng-model="user.passwordConfirm" id="password2" required maxlength=""/><br />
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="abilities" class="col-lg-2 control-label">Abilities</label>
+                <div class="col-lg-4">
+                    <select id="abilities" class="multiselect" ng-model="myAbilities" ng-options="item as item.description for item in abilities"  multiple="multiple" multiselect-dropdown >
+                    </select>
+                </div>
+            </div>
+      
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button ng-click="cancel()" class="btn btn-default" formnovalidate>Cancel</button>          
+                </div>
+            </div>
+            
+        </fieldset>
+        
+        
+    </form>
+
+    <div id="confirmation" ng-show="registered" class="alert alert-info">        
+        <strong>Thanks!</strong>
+        Your user account has been registered. You can now <a href="/#/login">log in</a> with the email address and password you just created.
+    </div>
+</section>

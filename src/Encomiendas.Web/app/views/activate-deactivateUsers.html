@@ -1,0 +1,25 @@
+﻿<h1 id="pageTitle">Users</h1>
+
+<ul class="pager">
+  <li class="previous"><a ng-click="back()">&larr; Back</a></li>
+  <li class="next"><a ng-click="next()">Next &rarr;</a></li>
+</ul>
+<table class="table table-striped">
+    <thead>
+        <th ng-click="sort('Name')"> Name  <i ng-if="sortCriteria == 'Name'" class="glyphicon glyphicon-chevron-up"></i> </th>
+        <th ng-click="sort('Email')"> Email  <i ng-if="sortCriteria == 'Email'"  class="glyphicon glyphicon-chevron-up"></i></th>
+        <th> Status </th>
+        <th></th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr ng-repeat="user in users">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td ng-if="user.isActive == true"> Active </td>
+            <td ng-if="user.isActive == false"> Not Active </td>
+            <td><a href="/#/profile/{{user.id}}" class="btn btn-success btn-sm"> See Profile </a></td>
+            <td><button class="btn btn-info btn-sm" ng-click="EnableUser({Id: user.id, Enable: !user.isActive})"> Activate / Deactivate </button></td>
+        </tr>
+    </tbody>
+</table>
