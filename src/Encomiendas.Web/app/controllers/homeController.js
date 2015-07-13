@@ -4,7 +4,7 @@
         $location.path("/login");
     } 
         
-    $scope.$parent.title = "Home";
+    $scope.$parent.title = "Inicio";
     $scope.users = [];
     $scope.paginationPayload = { PageNumber: 1, PageSize: 20, Field: "Name" };
     $scope.sortCriteria = "";

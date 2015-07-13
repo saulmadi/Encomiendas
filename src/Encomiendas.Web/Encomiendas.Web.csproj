@@ -116,6 +116,7 @@
   <ItemGroup>
     <None Include="Api\Infrastructure\Authentication\RolesFeatures.json" />
     <Content Include="app\app.js" />
+    <Content Include="app\controllers\incioController.js" />
     <Content Include="app\controllers\profileController.js" />
     <Content Include="app\controllers\resetPasswordController.js" />
     <Content Include="app\controllers\homeController.js" />
